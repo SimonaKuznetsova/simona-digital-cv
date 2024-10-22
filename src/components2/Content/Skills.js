@@ -26,6 +26,15 @@ const Skills = ({ active }) => {
       url: require("../../img/tools/blender.png"),
     },
     {
+      url: require("../../img/tools/slack.png"),
+    },
+    {
+      url: require("../../img/tools/discord.png"),
+    },
+    {
+      url: require("../../img/tools/atlassian.png"),
+    },
+    {
       url: require("../../img/tools/vscode.png"),
     },
     {
@@ -45,6 +54,96 @@ const Skills = ({ active }) => {
     },
     {
       url: require("../../img/tools/blender.png"),
+    },
+    {
+      url: require("../../img/tools/slack.png"),
+    },
+    {
+      url: require("../../img/tools/discord.png"),
+    },
+    {
+      url: require("../../img/tools/atlassian.png"),
+    },
+    {
+      url: require("../../img/tools/vscode.png"),
+    },
+    {
+      url: require("../../img/tools/webstorm.png"),
+    },
+    {
+      url: require("../../img/tools/git.png"),
+    },
+    {
+      url: require("../../img/tools/postman.png"),
+    },
+    {
+      url: require("../../img/tools/xcode.png"),
+    },
+    {
+      url: require("../../img/tools/android.png"),
+    },
+    {
+      url: require("../../img/tools/blender.png"),
+    },
+    {
+      url: require("../../img/tools/vscode.png"),
+    },
+    {
+      url: require("../../img/tools/webstorm.png"),
+    },
+    {
+      url: require("../../img/tools/git.png"),
+    },
+    {
+      url: require("../../img/tools/postman.png"),
+    },
+    {
+      url: require("../../img/tools/xcode.png"),
+    },
+    {
+      url: require("../../img/tools/android.png"),
+    },
+    {
+      url: require("../../img/tools/blender.png"),
+    },
+    {
+      url: require("../../img/tools/slack.png"),
+    },
+    {
+      url: require("../../img/tools/discord.png"),
+    },
+    {
+      url: require("../../img/tools/atlassian.png"),
+    },
+    {
+      url: require("../../img/tools/vscode.png"),
+    },
+    {
+      url: require("../../img/tools/webstorm.png"),
+    },
+    {
+      url: require("../../img/tools/git.png"),
+    },
+    {
+      url: require("../../img/tools/postman.png"),
+    },
+    {
+      url: require("../../img/tools/xcode.png"),
+    },
+    {
+      url: require("../../img/tools/android.png"),
+    },
+    {
+      url: require("../../img/tools/blender.png"),
+    },
+    {
+      url: require("../../img/tools/slack.png"),
+    },
+    {
+      url: require("../../img/tools/discord.png"),
+    },
+    {
+      url: require("../../img/tools/atlassian.png"),
     },
     {
       url: require("../../img/tools/vscode.png"),
