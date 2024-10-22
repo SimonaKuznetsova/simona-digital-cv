@@ -1,13 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./components2/App";
+import reportWebVitals from "./reportWebVitals";
+import Background from "./components2/Background/Background";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const AppComponent = () => {
+  const [theme, setTheme] = useState("light");
+
+  return (
+    <>
+      <App theme={theme} setTheme={setTheme}/>
+      {/* <Background theme={theme}/> */}
+    </>
+  );
+};
 root.render(
   <React.StrictMode>
-    <App />
+    <AppComponent />
   </React.StrictMode>
 );
 

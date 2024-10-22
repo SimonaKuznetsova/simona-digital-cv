@@ -1,0 +1,80 @@
+.toggle-container {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    background-color: #e5e3ec39;
+    border-radius: 1.9rem;
+    padding: 6px;
+    gap: .25rem;
+    color: var(--nav-item-color);
+    text-transform: uppercase;
+    font-weight: 250;
+    font-size: 13px;
+    z-index: 1;
+    background-image: radial-gradient(80% 6% at 50% 103%, rgba(111, 56, 252, 0.267), transparent);
+    box-shadow: rgba(86, 87, 87, 0.3) 0px 1px 2px 0px, rgba(70, 71, 71, 0.15) 0px 2px 6px 2px;
+    .nav-item {
+      // width: 122px;
+      // background-color: rgba(255, 255, 0, 0.223);
+      flex: 1;
+      text-align: center;
+      justify-content: center;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+      white-space: nowrap;
+      position: relative;
+
+      img {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        top: 3px;
+        right: 3px;
+      }
+    }
+
+    .activeNavItem {
+      color: #2c2929;
+    }
+    .toggle-button {
+      position: absolute;
+      top: 8.5px;
+      bottom: 10px;
+      // width: calc(100% / 4 + 40px);
+      width: 122px;
+      height: 32px;
+      background-color: #f9f9f9;
+      background-image: url('../../public/img/raster-bg.jpg');
+      // background-image: url('../../public/img/avatar-bg.png');
+      background-repeat: no-repeat;
+      background-size: 160%;
+      background-position-x: -10px;
+      border-radius: 16px;
+      transition: left 1.3s ease;
+      opacity: 0.9;
+    }
+
+    .about.toggle-button {
+      left: 8px;
+      // width: 120px;
+    }
+  
+    .skills.toggle-button {
+      left: calc(100% / 3 + .25rem);
+      // width: 90px;
+    }
+  
+    .work.toggle-button {
+      left: calc(100% * 2 / 3 + .45rem);
+      // width: 130px;
+    }
+  
+    // .work.toggle-button {
+    //   left: calc(100% * 3 / 4 - .05rem);
+    //   // width: 100px
+    // }
+  }
+  

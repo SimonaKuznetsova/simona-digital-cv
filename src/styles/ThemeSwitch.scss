@@ -1,0 +1,436 @@
+@layer reset, theme, base, variables, helpers,  utilities, demo.svg, demo.toggle-button, demo.icon, demo.support;
+
+@import url('https://fonts.googleapis.com/css2?family=Flow+Circular&family=Lato:wght@400;700&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+@layer variables {
+	:root {
+		/* ------------------------------ */
+		/* ------  Base Variables ------ */
+		/* ------------------------------ */
+		--content-width: 76.875rem;
+		--content-fluid-width: 116.25rem;
+		--container-offset: .9375rem;
+		--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+		--container-fluid-width: calc(var(--content-fluid-width) + (var(--container-offset) * 2));
+		
+		/* ------------------------------- */
+		/* -------  Border Radius ------- */
+		/* ------------------------------ */
+		// .parent {
+		// 	--nested-radius: calc(var(--radius) - var(--padding));
+		// }
+		// .nested {
+		// 	border-radius: var(--nested-radius);
+		// }
+
+		/* ----------------------------------- */
+		/* ------  Typography Variables ------ */
+		/* ----------------------------------- */
+		--ff-lato: 'Lato', sans-serif;
+		--ff-montserrat: 'Montserrat', sans-serif;
+		--ff-roboto: 'Roboto', sans-serif;
+		--ff-flow-circular: 'Flow Circular', cursive;
+
+
+		/* ------------------------------ */
+		/* ------  Color Variables ------ */
+		/* ------------------------------ */
+		--page-bg-color: 17.76% 0 0;
+		--dark-color: 16.23% 0.021 275.07;
+		--light-color: 88.26% 0.049 277.68;
+		--black-color: 0% 0 0;
+		--white-color: 100% 0 0;
+		--hover-color: 60.23% 0.048 210.71;
+		
+		--sorta-sage-color: 72.46% 0.051 156.14;
+		
+		/* ----------------------------------- */
+		/* ------  animation variables ------ */
+		/* --------------------------------- */
+		--ease-2: cubic-bezier(.25, 0, .4, 1);
+		--ease-3: cubic-bezier(.25, 0, .3, 1);
+		--ease-elastic-3: cubic-bezier(.5, 1.25, .75, 1.25);
+		--ease-elastic-4: cubic-bezier(.5, 1.5, .75, 1.25);
+		--ease-out-4: cubic-bezier(0, 0, .1, 1);
+		--ease-out-5: cubic-bezier(0, 0, 0, 1);
+		
+		/* ---------------------------------------------- */
+		/* ------  Theme Switcher color Variables ------ */
+		/* -------------------------------------------- */
+		
+	}
+}
+
+// @layer theme {
+// 	.App {
+// 		color-scheme: light 
+// 	}
+// 	.App[data-theme="dark"] {
+// 		color-scheme: dark 
+// 	}
+	
+// 	@supports not (color-scheme: dark) {
+// 		.App[data-theme="dark"] {
+// 			background-color: oklch(var(--page-bg-color)) !important;
+// 		}
+// 	}
+// }
+
+@layer reset {
+	/* -------------------------------- */
+	/* ----------- R e s et ----------- */
+	/* -------------------------------- */
+
+	/* Box sizing rules */
+	html {
+		box-sizing: border-box;
+	}
+
+	/* Set core root defaults */
+	html:focus-within {
+		scroll-behavior: smooth;
+	}
+
+	// *, *:before, *:after {
+	// 	box-sizing: inherit;
+	// }
+
+
+	/* make image easier to work with */
+	img, picture, video, canvas, svg {
+		display: block;
+		max-inline-size: 100%;
+		block-size: auto;
+		object-fit: cover;
+	}
+
+	/* make svg hover easier */
+	svg {
+		fill: currentColor;
+	}
+
+	/* make form easier to work with */
+	input, button, textarea, select {
+		letter-spacing: inherit;
+		word-spacing: inherit;
+		font: inherit;
+	}
+	
+	/* Chrome, Safari, Edge, Opera */
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	/* Firefox */
+	input[type=number] {
+		-moz-appearance: textfield;
+	}
+
+	/* More sensible line-wrapping */
+	p, h1, h2, h3, h4, h5, h6 {
+		overflow-wrap: break-word;
+		hyphens: auto;
+	}
+
+	/* reset link default syles */
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	/* A elements that don't have a class get default styles */
+	a:not([class]) {
+		text-decoration-skip-ink: auto;
+	}
+
+	/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+	@media (prefers-reduced-motion: reduce) {
+		html:focus-within {
+		 scroll-behavior: auto;
+		}
+
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+		}
+	}
+
+	/* React Framework Specific */
+	#root, #__next {
+		isolation: isolate;
+	}
+}
+
+@layer utilities {
+	/* -------------------------------- */
+	/* ------- Utility Classews ------- */
+	/* -------------------------------- */
+
+	/* set up containers */
+	.site-container {
+		overflow: hidden;
+	}
+
+	.container {
+		margin-inline: auto;
+		padding-inline: var(--container-offset);
+		max-inline-size: var(--content-width);
+	}
+
+	.container-fluid {
+		margin-inline: auto;
+		padding-inline: var(--container-offset);
+		max-width: var(--container-fluid-width);
+	}
+
+
+	/* display utility classes */
+	.flex {
+		display: flex;
+	}
+
+	.grid {
+		display: grid;
+	}
+
+	.d-block {
+		display: block;
+	}
+}
+
+@layer helpers {
+	.is-hidden {
+		display: none !important; /* stylelint-disable-line declaration-no-important */
+	}
+	/* utility classes for reseting som default styles*/
+	.btn-reset {
+		border: none;
+		padding: 0;
+		background-color: transparent;
+		cursor: pointer;
+	}
+
+	.list-reset {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.input-reset {
+		-webkit-appearance: none;
+		appearance: none;
+		border: none;
+		outline: none;
+		border-radius: 0;
+		background-color: var(--color-white);
+
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration {
+			display: none;
+		}
+
+		&::-ms-reveal,
+		&::-ms-clear {
+			display: none;
+		}
+
+		&::-webkit-file-upload-button {
+			visibility: hidden;
+		}
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+	}
+
+	/* sr only utility class */
+	.visually-hidden {
+		position: absolute;
+		overflow: hidden;
+		margin: -0.0625rem;
+		border: 0;
+		padding: 0;
+		inline-size: 0.0625rem;
+		block-size: 0.0625rem;
+		clip: rect(0 0 0 0);
+	}
+
+	/* focus visible class */
+	.js-focus-visible :focus:not(.focus-visible) {
+		outline: none;
+	}
+
+	/* Disable scroll */
+	.dis-scroll {
+		position: fixed;
+		inset-inline-start: 0;
+		inset-block-start: 0;
+		overflow: hidden;
+		inline-size: 100%;
+		block-size: 100vh;
+		block-size: 100dvh;
+		overscroll-behavior: none;
+	}
+
+	/* Disable scroll on ios devaices */
+	.page--ios .dis-scroll {
+		position: relative;
+	}
+
+	/* Align elements to center */
+	.centered {
+		text-align: center;
+	}
+
+	/* Inherit Box sizing to swiper js swiper wrapper class */
+	.swiper-wrapper {
+		box-sizing: inherit;
+	}
+}
+
+@layer demo.svg {
+	.sun-and-moon {
+		& >:is(.moon,.sun,.sun-beams) {
+			transform-origin: center center;
+		}
+		& >:is(.moon,.sun) {
+			fill: oklch(var(--icon-fill));
+		}
+		
+		& >.sun-beams {
+			stroke: oklch(var(--icon-fill));
+			stroke-width: .125rem;
+		}
+		
+	}
+}
+@layer demo.toggle-button {
+	.theme-toggle {
+		--icon-fill: 42.76% 0.015 248.17;
+		--icon-fill-hover: 26.21% 0.009 248.19;
+		
+		--_size: 3.1rem;
+		--_padding: .5rem;
+		--_aspect-ration: 1;
+		--_border-radius: 50%;
+		block-size: var(--_size);
+		inline-size: var(--_size);
+		aspect-ratio: var(--_aspect-ration);
+		padding-block: calc(var(--_padding) + 0.125rem);
+		padding-inline: calc(var(--_padding) + 0.125rem);
+		border-radius: var(--_border-radius);
+		touch-action: manipulation;
+		-webkit-tap-highlight-color: transparent;
+		svg {
+			stroke-linecap: round;
+			block-size: 100%;
+			inline-size: 100%;
+		}
+		
+		
+		
+		&:is(:hover,:focus-visible) {
+			& >.sun-and-moon>:is(.moon,.sun) {
+				fill: oklch(var(--icon-fill-hover));
+			}
+			
+			.sun-and-moon>.sun-beams {
+				stroke: oklch(var(--icon-fill-hover));
+			}
+		}
+		
+		@media (hover: none) {
+			--_size: 3rem;
+		}
+	}
+	
+	[data-theme="dark"] .theme-toggle {
+		--icon-fill: 76.26% 0.013 244.31;
+		--icon-fill-hover: 92.27% 0.006 239.82;
+	}
+}
+@layer demo.icon {
+	.icon-button {
+		--_shadow-size: 0;
+		--_shadow-color: 55.66% 0.208 268.35;
+		box-shadow: 0 0 var(--_shadow-size) oklch(var(--_shadow-color));
+		outline-offset: .3125rem;
+		transition: outline-offset 145ms var(--ease-2),box-shadow .5s var(--ease-out-4),translate .3s var(--ease-3);
+		transition-delay: 0s,0s,.15s;
+		&:hover:not(:active) {
+			--_shadow-size: 2em;
+		}
+	}
+	
+	// [data-theme="dark"] .icon-button {
+	// 	box-shadow: none;
+	// }
+}
+
+@layer demo.support {
+
+	[data-theme="dark"] .sun-and-moon>.sun {
+		transform: scale(1.75)
+	}
+
+	[data-theme="dark"] .sun-and-moon>.sun-beams {
+		opacity: 0
+	}
+
+	[data-theme=dark] .sun-and-moon>.moon>circle {
+		transform: translate(-7px)
+	}
+
+	@supports (cx: 1) {
+		[data-theme=dark] .sun-and-moon>.moon>circle {
+			transform: translate(0);
+			cx: 17
+		}
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		.sun-and-moon>.sun {
+			transition: transform .5s var(--ease-elastic-3)
+		}
+
+		.sun-and-moon>.sun-beams {
+			transition: transform .5s var(--ease-elastic-4),opacity .5s var(--ease-3)
+		}
+
+		.sun-and-moon .moon>circle {
+			transition: transform .25s var(--ease-out-5)
+		}
+
+		@supports (cx: 1) {
+			.sun-and-moon .moon>circle {
+				transition: cx .25s var(--ease-out-5)
+			}
+		}
+
+		[data-theme=dark] .sun-and-moon>.sun {
+			transform: scale(1.75);
+			transition-timing-function: var(--ease-3);
+			transition-duration: .25s
+		}
+
+		[data-theme=dark] .sun-and-moon>.sun-beams {
+			transform: rotate(-25deg);
+			transition-duration: .15s
+		}
+
+		[data-theme=dark] .sun-and-moon>.moon>circle {
+			transition-delay: .25s;
+			transition-duration: .5s
+		}
+	}
+}

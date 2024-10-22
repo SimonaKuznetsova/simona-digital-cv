@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --background-color: rgb(255, 249, 252);
+  --blob-color: #ffc49e;
+  --grid-bg: url('../public/img/main-bg3.svg');
+  --icon-bg: #495057;
+  --nav-item-color: #303131;
+  --about-title-color: #6a5d55;
+  --purple-tag-bg: rgba(175, 155, 226, 0.35);
+  --yellow-tag-bg: rgba(248, 231, 146, 0.35);
+  --blue-tag-bg: rgba(146, 195, 248, 0.35);
+  --green-tag-bg: rgba(146, 248, 178, 0.35);
+  --orange-tag-bg: rgba(248, 167, 146, 0.35);
+  --active-job-color: rgb(52, 50, 50);
+}
+
+[data-theme="dark"] {
+  --background-color: rgb(33, 33, 33);
+  --blob-color: rgba(22, 29, 25, 0.705);
+  --grid-bg: url('../public/img/main-bg4.svg');
+  --icon-bg: #abb3ba;
+  --nav-item-color: #cbd3db;
+  --about-title-color: #77727c;
+  --purple-tag-bg: rgba(175, 155, 226, 0.18);
+  --yellow-tag-bg: rgba(248, 231, 146, 0.18);
+  --blue-tag-bg: rgba(146, 195, 248, 0.18);
+  --green-tag-bg: rgba(146, 248, 178, 0.18);
+  --orange-tag-bg: rgba(248, 167, 146, 0.18);
+  --active-job-color: #795072;
+}

@@ -1,0 +1,56 @@
+.uniqueBox {
+    transform: scale(0.6);
+}
+
+.container {
+    position: relative;
+    width: 300px; /* Задайте ширину контейнера */
+    height: 300px; /* Задайте высоту контейнера */
+    overflow: hidden; /* Скрыть излишки */
+}
+
+/* Маска для изображения PNG */
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/uniqueBox.png'); /* Ваше PNG изображение */
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-mask-image: url('../img/uniqueBox.png'); /* Маска для WebKit-браузеров */
+    mask-image: url('../img/uniqueBox.png'); /* Маска для остальных браузеров */
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    z-index: 1; /* Маска сверху */
+}
+
+/* Псевдоэлемент для фона */
+.container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../public/img/raster-bg.jpg'); /* Фоновое изображение */
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0; /* Изначально скрыт */
+    transition: opacity 0.3s ease; /* Плавная анимация смены прозрачности */
+    z-index: 0; /* Фон ниже маски */
+}
+
+.container:hover::after {
+    opacity: 1; /* Показываем фон при наведении */
+}
+
+.transparent-image {
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Изображение не перекрывает интерактивность */
+}
+
+  

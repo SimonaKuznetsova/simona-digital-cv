@@ -1,0 +1,42 @@
+//marque----
+.marquee-container {
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 22px;
+    padding: 10px;
+  }
+  
+  .marquee {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    animation: scroll 50s linear infinite;
+
+    .item {
+      white-space: nowrap;
+    }
+  }
+
+  .marqueeVertical {
+    flex-direction: column;
+    animation: scrollVertical 50s linear infinite;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes scrollVertical {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100vh);
+    }
+  }

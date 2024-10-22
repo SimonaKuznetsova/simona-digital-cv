@@ -1,0 +1,16 @@
+<svg height="1800px" width="2880px" xmlns="http://www.w3.org/2000/svg">
+  <!-- Фон с нужным цветом -->
+  <rect width="2880px" height="1800px" fill="black" />
+  
+  <!-- Фильтр для добавления шума -->
+  <filter id="grainy">
+    <feTurbulence type="fractalNoise" baseFrequency="3" numOctaves="2" result="noise" seed="0">
+      <animate attributeName="seed" values="0;100" dur="5s" repeatCount="indefinite"/>
+    </feTurbulence>
+    <feColorMatrix in="noise" type="saturate" values="0" result="monoNoise"/>
+    <feComposite in="monoNoise" in2="SourceGraphic" operator="in" result="grainyShape"/>
+  </filter>
+  
+  <!-- Прямоугольник с шумом -->
+  <rect width="2880px" height="1800px" filter="url(#grainy)" />
+</svg>
