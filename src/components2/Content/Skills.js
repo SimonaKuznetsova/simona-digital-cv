@@ -201,14 +201,14 @@ const Skills = ({ active }) => {
           <SkillItem label={"React"} level={7} />
           <SkillItem label={"React Native"} level={4} />
           <SkillItem label={"Next.js"} level={4} />
+          <SkillItem label={"Redux"} level={7} />
+          <SkillItem label={"TypeScript"} level={5} />
+          <SkillItem label={"Electron"} level={3} />
           <SkillItem label={"Tailwind CSS"} level={8} />
           <SkillItem label={"Material UI"} level={8} />
           <SkillItem label={"shadcn/ui"} level={6} />
-          <SkillItem label={"Redux"} level={7} />
-          <SkillItem label={"RTK Query"} level={5} />
-          <SkillItem label={"TypeScript"} level={5} />
-          <SkillItem label={"Node.js"} level={3} />
-          <SkillItem label={"AWS Lambda"} level={3} />
+          <SkillItem label={"Node.js"} level={2} />
+          <SkillItem label={"AWS Lambda"} level={2} />
           <SkillItem label={"Three.js"} level={2} />
         </div>
       </div>

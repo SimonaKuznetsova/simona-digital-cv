@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 400px;
+    width: 480px;
     background-color: #e5e3ec39;
     border-radius: 1.9rem;
     padding: 6px;
@@ -44,7 +44,7 @@
       top: 8.5px;
       bottom: 10px;
       // width: calc(100% / 4 + 40px);
-      width: 122px;
+      width: 112px;
       height: 32px;
       background-color: #f9f9f9;
       background-image: url('../../public/img/raster-bg.jpg');
@@ -63,12 +63,17 @@
     }
   
     .skills.toggle-button {
-      left: calc(100% / 3 + .25rem);
+      left: calc(100% / 4 + 0.2rem);
       // width: 90px;
     }
   
     .work.toggle-button {
-      left: calc(100% * 2 / 3 + .45rem);
+      left: calc(100% * 2 / 4 + 0.25rem);
+      // width: 130px;
+    }
+
+    .portfolio.toggle-button {
+      left: calc(100% * 3 / 4 + .2rem);
       // width: 130px;
     }
   

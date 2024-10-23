@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../styles/ThemeSwitch.scss";
 import "../../styles/UniqueBox.scss";
 
-const ReactIcon = ({ label }) => {
+const ReactIcon = ({ label, handleClick }) => {
   const getSvg = () => {
     switch (label) {
       /*----------------LINKEDIN---------------*/
@@ -138,7 +138,7 @@ const ReactIcon = ({ label }) => {
       title={label}
       aria-label="auto"
       aria-live="polite"
-      onClick={null}
+      onClick={handleClick ?? null}
     >
       {getSvg()}
     </button>

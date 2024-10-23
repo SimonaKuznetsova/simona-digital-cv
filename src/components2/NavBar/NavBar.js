@@ -18,6 +18,9 @@ const NavBar = ({ handleClick, active }) => {
       <div className={`nav-item ${active === 'work' && 'activeNavItem'}`} onClick={() => handleClick("work")}>
         Skills & Tools
       </div>
+      <div className={`nav-item ${active === 'portfolio' && 'activeNavItem'}`} onClick={() => handleClick("portfolio")}>
+        Portfolio
+      </div>
     </div>
   );
 };

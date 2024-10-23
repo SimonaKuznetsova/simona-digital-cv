@@ -3,6 +3,7 @@ import '../../styles/Content.scss';
 import About from "./About";
 import Skills from "./Skills";
 import Work from "./Work";
+import Portfolio from "./Portfolio";
 
 const Content = ({active, theme, setTheme}) => {
 
@@ -11,6 +12,7 @@ const Content = ({active, theme, setTheme}) => {
       {active === 'about' && <About theme={theme} setTheme={setTheme}/>}
       {active === 'skills' && <Work />}
       {active === 'work' && <Skills />}
+      {active === 'portfolio' && <Portfolio />}
     </>
   );
 };
