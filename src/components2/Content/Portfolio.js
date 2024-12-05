@@ -3,7 +3,7 @@ import "../../styles/Portfolio.scss";
 import ReactIcon from "../ReactIcon/ReactIcon";
 import ImageViewer from 'react-simple-image-viewer';
 
-const Skills = ({ active }) => {
+const Skills = ({ active, setCurrentProject, setCurrentImage, setIsViewerOpen, currentImage, currentProject }) => {
 
   const reactItems = [
     {
@@ -77,9 +77,9 @@ const Skills = ({ active }) => {
     },
   ]
 
-  const [currentProject, setCurrentProject] = useState(null);
-  const [currentImage, setCurrentImage] = useState(0);
-  const [isViewerOpen, setIsViewerOpen] = useState(false);
+  // const [currentProject, setCurrentProject] = useState(null);
+  // const [currentImage, setCurrentImage] = useState(0);
+  // const [isViewerOpen, setIsViewerOpen] = useState(false);
 
   const openImageViewer = useCallback((index, images) => {
     setCurrentProject(images); // Сохраняем текущий проект
@@ -128,14 +128,14 @@ const Skills = ({ active }) => {
         </div>
       </div>
 
-      {isViewerOpen && (
+      {/* {isViewerOpen && (
         <ImageViewer
           closeOnClickOutside={true}
           src={currentProject} // Массив изображений
           currentIndex={currentImage} // Текущий индекс
           onClose={() => setIsViewerOpen(false)} // Закрыть просмотрщик
         />
-      )}
+      )} */}
     </div>
   );
 };

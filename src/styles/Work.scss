@@ -16,7 +16,10 @@
 
   .avatarStatus {
     font-size: 20px;
-    color: rgba(54, 15, 44, 0.346);
+    // color: rgba(54, 15, 44, 0.346);
+    color: var(--active-job-color);
+    opacity: 0.7;
+    font-weight: 500;
 
     display: flex;
     justify-content: flex-end;

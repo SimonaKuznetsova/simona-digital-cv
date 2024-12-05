@@ -207,7 +207,7 @@ const Skills = ({ active }) => {
           <SkillItem label={"Tailwind CSS"} level={8} />
           <SkillItem label={"Material UI"} level={8} />
           <SkillItem label={"shadcn/ui"} level={6} />
-          <SkillItem label={"Node.js"} level={2} />
+          <SkillItem label={"Node.js"} level={4} />
           <SkillItem label={"AWS Lambda"} level={2} />
           <SkillItem label={"Three.js"} level={2} />
         </div>

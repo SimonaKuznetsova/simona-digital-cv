@@ -81,5 +81,35 @@
     //   left: calc(100% * 3 / 4 - .05rem);
     //   // width: 100px
     // }
+    @media (max-width: 570px) {
+      width: 320px;
+      height: 26px;
+      font-size: 10px;
+
+      .toggle-button {
+        width: 80px;
+        height: 22px;    
+      }
+
+      .about.toggle-button {
+        left: 8px;
+        // width: 120px;
+      }
+    
+      .skills.toggle-button {
+        left: calc(100% / 4 - 0.4rem);
+        // width: 90px;
+      }
+    
+      .work.toggle-button {
+        left: calc(50% - 0.35rem);
+        // width: 130px;
+      }
+  
+      .portfolio.toggle-button {
+        left: calc(100% * 3 / 4 - .2rem);
+        // width: 130px;
+      }
+    }
   }
   
