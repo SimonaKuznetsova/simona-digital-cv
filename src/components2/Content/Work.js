@@ -31,16 +31,17 @@ const Work = () => {
         </div>
 
         <div className="jobsWrapper">
-          <JobItem
+          {/* <JobItem
             position={"Freelancer"}
             company={"UpWork"}
             term={"August, 2024 - Present"}
             isActive={true}
-          />
+          /> */}
           <JobItem
             position={"Front End Engineer"}
             company={"IDeus"}
-            term={"March, 2022 - July, 2024"}
+            term={"March, 2022 - Present"}
+            isActive={true}
           />
           <JobItem
             position={"Front End Engineer"}
